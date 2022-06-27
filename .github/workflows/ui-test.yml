@@ -9,6 +9,10 @@ jobs:
   ui-tests:
     if: ${{ github.event.label.name == 'test' }}
     runs-on: ubuntu-latest
-    
+
+    strategy:
+      matrix:
+        containers: [1, 2, 3, 4]
+
     steps:
     - run: echo "ui tested"
